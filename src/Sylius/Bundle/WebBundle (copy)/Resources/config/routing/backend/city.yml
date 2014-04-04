@@ -1,0 +1,48 @@
+# Fisher add in 4/01
+# City route
+
+sylius_backend_city_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+         _controller: sylius.controller.city:indexAction
+         _sylius:
+             template: SyliusWebBundle:Backend/City:index.html.twig
+             sortable: true
+
+sylius_backend_city_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+         _controller: sylius.controller.city:createAction
+         _sylius:
+             template: SyliusWebBundle:Backend/City:create.html.twig
+             redirect: sylius_backend_city_show
+
+sylius_backend_city_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT]
+    defaults:
+         _controller: sylius.controller.city:updateAction
+         _sylius:
+             template: SyliusWebBundle:Backend/City:update.html.twig
+             redirect: sylius_backend_city_show
+
+sylius_backend_city_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+         _controller: sylius.controller.city:deleteAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Misc:delete.html.twig
+             redirect: sylius_backend_city_index
+
+sylius_backend_city_show:
+    pattern: /{id}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.city:showAction
+        _sylius:
+            template: SyliusWebBundle:Backend/City:show.html.twig
+
+

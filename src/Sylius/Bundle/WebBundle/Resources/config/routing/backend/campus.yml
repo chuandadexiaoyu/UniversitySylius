@@ -1,0 +1,48 @@
+# Fisher add in 4/01
+# campus route
+
+sylius_backend_campus_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+         _controller: sylius.controller.campus:indexAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Campus:index.html.twig
+             sortable: true
+
+sylius_backend_campus_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+         _controller: sylius.controller.campus:createAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Campus:create.html.twig
+             redirect: sylius_backend_campus_show
+
+sylius_backend_campus_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT]
+    defaults:
+         _controller: sylius.controller.campus:updateAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Campus:update.html.twig
+             redirect: sylius_backend_campus_show
+
+sylius_backend_campus_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+         _controller: sylius.controller.campus:deleteAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Misc:delete.html.twig
+             redirect: sylius_backend_campus_index
+
+sylius_backend_campus_show:
+    pattern: /{id}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.campus:showAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Campus:show.html.twig
+
+

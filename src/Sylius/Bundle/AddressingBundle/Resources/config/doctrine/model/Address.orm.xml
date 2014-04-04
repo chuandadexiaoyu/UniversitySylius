@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+    <mapped-superclass name="Sylius\Bundle\AddressingBundle\Model\Address" table="sylius_address">
+
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+       <many-to-one field="chinaProvince" target-entity="Sylius\Bundle\AddressingBundle\Model\ChinaProvinceInterface">
+            <join-column name="china_province_id" referenced-column-name="id" />
+        </many-to-one>
+
+        <many-to-one field="city" target-entity="Sylius\Bundle\AddressingBundle\Model\CityInterface">
+            <join-column name="city_id" referenced-column-name="id" />
+        </many-to-one>
+
+        <many-to-one field="university" target-entity="Sylius\Bundle\AddressingBundle\Model\UniversityInterface">
+            <join-column name="university_id" referenced-column-name="id" />
+        </many-to-one>
+
+        <many-to-one field="campus" target-entity="Sylius\Bundle\AddressingBundle\Model\CampusInterface">
+            <join-column name="campus_id" referenced-column-name="id" />
+        </many-to-one>
+
+<!--I hope add the model in my address 3/26                                -->
+
+        <field name="buildingNumber" column="building_number" type="string" /> 
+
+        <field name="unit" column="unit" type="string" />
+
+        <field name="nickName" column="nickName" type="string" />
+
+        <field name="doorNumber" column="door_number" type="string" />
+        
+
+        <field name="createdAt" column="created_at" type="datetime">
+            <gedmo:timestampable on="create"/>
+        </field>
+
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="update"/>
+        </field>
+
+    </mapped-superclass>
+
+</doctrine-mapping>

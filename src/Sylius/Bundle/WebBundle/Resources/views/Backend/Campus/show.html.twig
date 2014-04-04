@@ -1,0 +1,36 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+<ol class="breadcrumb">
+    <li>{{ 'sylius.breadcrumb.configuration'|trans }}</li>
+    <li><a href="{{ path('sylius_backend_campus_index') }}">{{ 'sylius.breadcrumb.campus.index'|trans }}</a></li>
+    <li>{{ campus.name }}</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="actions-menu">
+        {{ buttons.manage(path('sylius_backend_campus_index'), 'sylius.campus.manage'|trans) }}
+        {{ buttons.edit(path('sylius_backend_campus_update', {'id': campus.id})) }}
+        {{ buttons.delete(path('sylius_backend_campus_delete', {'id': campus.id}), null, false, false) }}
+    </div>
+    <h1><i class="glyphicon glyphicon-flag"></i> {{ 'sylius.campus.show_header'|trans|raw }}</h1>
+</div>
+
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>{{ 'sylius.campus.name'|trans }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ campus.name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

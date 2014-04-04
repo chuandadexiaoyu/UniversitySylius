@@ -1,0 +1,26 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Backend/City:macros.html.twig' import list %}
+
+{% block topbar %}
+<ol class="breadcrumb">
+    <li>{{ 'sylius.breadcrumb.configuration'|trans }}</li>
+    <li>{{ 'sylius.breadcrumb.city.index'|trans }}</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="actions-menu">
+        {{ buttons.create(path('sylius_backend_city_create'), 'sylius.city.create'|trans) }}
+    </div>
+    <h1><i class="glyphicon glyphicon-flag"></i> {{ 'sylius.city.index_header'|trans|raw }}</h1>
+</div>
+
+{{ pagination(cities) }}
+{{ list(cities) }}
+{{ pagination(cities) }}
+
+{% endblock %}

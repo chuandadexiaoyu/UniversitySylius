@@ -1,0 +1,22 @@
+{% form_theme form 'SyliusWebBundle::forms.html.twig' %}
+
+{{ form_errors(form) }}
+
+<fieldset>
+    <div class="row">
+        <div class="col-md-6">
+            {{ form_row(form.name) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_widget(form.cities) }}
+            <a href="#" class="btn btn-success btn-block" data-collection-button="add" data-prototype="sylius_china_province_cities" data-collection="sylius_china_province_cities">
+                {{ 'sylius.china_province.add_city'|trans }}
+            </a>
+        </div>
+
+    </div>
+</fieldset>
+
+<hr>
+{{ form_widget(form._token) }}

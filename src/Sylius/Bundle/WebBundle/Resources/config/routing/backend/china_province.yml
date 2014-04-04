@@ -1,0 +1,48 @@
+# Fisher add in 3/30
+# China Province route
+
+sylius_backend_china_province_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+         _controller: sylius.controller.china_province:indexAction
+         _sylius:
+             template: SyliusWebBundle:Backend/ChinaProvince:index.html.twig
+             sortable: true
+
+sylius_backend_china_province_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+         _controller: sylius.controller.china_province:createAction
+         _sylius:
+             template: SyliusWebBundle:Backend/ChinaProvince:create.html.twig
+             redirect: sylius_backend_china_province_show
+
+sylius_backend_china_province_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT]
+    defaults:
+         _controller: sylius.controller.china_province:updateAction
+         _sylius:
+             template: SyliusWebBundle:Backend/ChinaProvince:update.html.twig
+             redirect: sylius_backend_china_province_show
+
+sylius_backend_china_province_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+         _controller: sylius.controller.china_province:deleteAction
+         _sylius:
+             template: SyliusWebBundle:Backend/Misc:delete.html.twig
+             redirect: sylius_backend_china_province_index
+
+sylius_backend_china_province_show:
+    pattern: /{id}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.china_province:showAction
+        _sylius:
+            template: SyliusWebBundle:Backend/ChinaProvince:show.html.twig
+
+

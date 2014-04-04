@@ -1,0 +1,58 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+<ol class="breadcrumb">
+    <li>{{ 'sylius.breadcrumb.configuration'|trans }}</li>
+    <li><a href="{{ path('sylius_backend_university_index') }}">{{ 'sylius.breadcrumb.university.index'|trans }}</a></li>
+    <li>{{ university.name }}</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="actions-menu">
+        {{ buttons.manage(path('sylius_backend_university_index'), 'sylius.university.manage'|trans) }}
+        {{ buttons.edit(path('sylius_backend_university_update', {'id': university.id})) }}
+        {{ buttons.delete(path('sylius_backend_university_delete', {'id': university.id}), null, false, false) }}
+    </div>
+    <h1><i class="glyphicon glyphicon-flag"></i> {{ 'sylius.university.show_header'|trans|raw }}</h1>
+</div>
+
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>{{ 'sylius.university.name'|trans }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ university.name }}</td>
+        </tr>
+    </tbody>
+</table>
+{% if university.hasCampuses %}
+    <table id="cities" class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>{{ 'sylius.university.campuses'|trans }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campus in university.campuses %}
+                <tr id="{{ campus.id }}">
+                    <td>{{ campus.name }}</td>
+                    <td>
+                        <div class="pull-right">
+                            {{ buttons.edit(path('sylius_backend_campus_update', {'id': campus.id})) }}
+                            {{ buttons.delete(path('sylius_backend_campus_delete', {'id': campus.id, 'university_Id' : campus.id})) }}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+
+    <mapped-superclass name="Sylius\Bundle\AddressingBundle\Model\University" table="sylius_university">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="name" column="name" type="string" />
+
+        <many-to-one field="city" target-entity="Sylius\Bundle\AddressingBundle\Model\CityInterface" inversed-by="universities">
+            <join-column name="city_id" referenced-column-name="id" />
+        </many-to-one>
+
+        <one-to-many field="campuses" target-entity="Sylius\Bundle\AddressingBundle\Model\CampusInterface" mapped-by="university">
+            <cascade>
+            	<cascade-all/>
+            </cascade>
+        </one-to-many>
+
+    </mapped-superclass>
+
+</doctrine-mapping>

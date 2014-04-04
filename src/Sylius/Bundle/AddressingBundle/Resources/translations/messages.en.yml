@@ -1,0 +1,51 @@
+sylius:
+    form:
+        address:
+            city: City
+            company: Company
+            country: Country
+            first_name: First name
+            last_name: Last name
+            postcode: Postcode
+            street: Street
+            province: Province
+            building_number: Building Number
+            unit: Unit
+            door_number: House Number
+            unit: Unit
+            nick_name: NickName
+            china_province: Province
+            university: University
+            campus: Campus
+        country:
+            iso_name: ISO name
+            name: Name
+            provinces: Provinces
+            select: Select
+        province:
+            name: Name
+            select: Select
+        china_province:
+            name: China Province Name
+            select: Select Province
+        city:
+            name: City Name
+            universities: City Universities 
+            select: Select City
+        campus:
+            name: Campus Name
+            select: Select Campus
+        university:
+            name: University Name
+            select: Select University 
+            campuses: Campus
+        zone:
+            members: Members
+            name: Name
+            type: Type
+        zone_member_country:
+            country: Country
+        zone_member_province:
+            province: Province
+        zone_member_zone:
+            zone: Zone
