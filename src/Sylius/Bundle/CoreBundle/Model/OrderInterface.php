@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Sylius\Bundle\CoreBundle\Model;
 
@@ -30,7 +22,12 @@ interface OrderInterface extends CartInterface, PromotionSubjectInterface
     const TAX_ADJUSTMENT       = 'tax';
     const SHIPPING_ADJUSTMENT  = 'shipping';
     const PROMOTION_ADJUSTMENT = 'promotion';
-
+    
+    const NO_PACKED = 'no_packed';
+    const PACKED = 'packed';
+    const SHIPPING = 'shipping';
+    const DONE = 'done';
+     
     /**
      * Get user.
      *
@@ -38,6 +35,17 @@ interface OrderInterface extends CartInterface, PromotionSubjectInterface
      */
     public function getUser();
 
+    public function getEndAt();
+
+    public function setEndAt(\DateTime $endAt = null);
+
+    public function getMyShipState();
+
+    public function setMyShipState($myShipState);
+
+    public function end();
+
+    public function isEnd();
     /**
      * Set user.
      *

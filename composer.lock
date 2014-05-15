@@ -978,12 +978,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "f8e9255eedc91bc53195de288c9fe640719b2817"
+                "reference": "e4c000a9b19096be0135d0773b56f7c757c93542"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/f8e9255eedc91bc53195de288c9fe640719b2817",
-                "reference": "f8e9255eedc91bc53195de288c9fe640719b2817",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e4c000a9b19096be0135d0773b56f7c757c93542",
+                "reference": "e4c000a9b19096be0135d0773b56f7c757c93542",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1038,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-03-18 08:55:34"
+            "time": "2014-04-08 21:21:16"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1788,16 +1788,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "0.15.0",
+            "version": "0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "4a49caf0a20babcf8040fb1cf84f26faff6e7d85"
+                "reference": "c8a171357ca92b6706e395c757f334902d430ea9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/4a49caf0a20babcf8040fb1cf84f26faff6e7d85",
-                "reference": "4a49caf0a20babcf8040fb1cf84f26faff6e7d85",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/c8a171357ca92b6706e395c757f334902d430ea9",
+                "reference": "c8a171357ca92b6706e395c757f334902d430ea9",
                 "shasum": ""
             },
             "require": {
@@ -1805,17 +1805,17 @@
                 "jms/metadata": "~1.1",
                 "jms/parser-lib": "1.*",
                 "php": ">=5.3.2",
-                "phpcollection/phpcollection": ">=0.1,<0.3-dev"
+                "phpcollection/phpcollection": "~0.1"
             },
             "require-dev": {
-                "doctrine/orm": ">=2.1,<2.4-dev",
+                "doctrine/orm": "~2.1",
                 "doctrine/phpcr-odm": "~1.0.1",
                 "jackalope/jackalope-doctrine-dbal": "1.0.*",
                 "propel/propel1": "~1.7",
                 "symfony/filesystem": "2.*",
-                "symfony/form": ">=2.1,<=2.4-dev",
-                "symfony/translation": ">=2.0,<2.2-dev",
-                "symfony/validator": ">=2.0,<2.2-dev",
+                "symfony/form": "~2.1",
+                "symfony/translation": "~2.0",
+                "symfony/validator": "~2.0",
                 "symfony/yaml": "2.*",
                 "twig/twig": ">=1.8,<2.0-dev"
             },
@@ -1825,7 +1825,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.14-dev"
+                    "dev-master": "0.15-dev"
                 }
             },
             "autoload": {
@@ -1841,7 +1841,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1854,7 +1854,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2014-02-10 11:00:05"
+            "time": "2014-03-18 08:39:00"
         },
         {
             "name": "jms/serializer-bundle",
@@ -2002,16 +2002,16 @@
         },
         {
             "name": "knplabs/gaufrette",
-            "version": "v0.1.4",
+            "version": "v0.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette.git",
-                "reference": "3738125aa5e1f3cc430b91085f4578ce5a4383bc"
+                "reference": "4663c6605e3c96d4b9affa1c38dc66a4d8e1fedf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/3738125aa5e1f3cc430b91085f4578ce5a4383bc",
-                "reference": "3738125aa5e1f3cc430b91085f4578ce5a4383bc",
+                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/4663c6605e3c96d4b9affa1c38dc66a4d8e1fedf",
+                "reference": "4663c6605e3c96d4b9affa1c38dc66a4d8e1fedf",
                 "shasum": ""
             },
             "require": {
@@ -2019,22 +2019,34 @@
             },
             "require-dev": {
                 "amazonwebservices/aws-sdk-for-php": "1.5.*",
+                "aws/aws-sdk-php": "~2",
                 "doctrine/dbal": ">=2.3",
                 "dropbox-php/dropbox-php": "*",
                 "herzult/php-ssh": "*",
-                "phpspec/phpspec2": "1.0.*",
-                "rackspace/php-cloudfiles": "*"
+                "microsoft/windowsazure": "dev-master",
+                "mikey179/vfsstream": "~1.2.0",
+                "phpseclib/phpseclib": "dev-master",
+                "phpspec/phpspec": "2.0.*",
+                "phpunit/phpunit": "3.7.*",
+                "rackspace/php-cloudfiles": "*",
+                "rackspace/php-opencloud": "1.6.*"
             },
             "suggest": {
-                "amazonwebservices/aws-sdk-for-php": "to use the Amazon S3 adapter",
+                "amazonwebservices/aws-sdk-for-php": "to use the legacy Amazon S3 adapters",
+                "aws/aws-sdk-php": "to use the Amazon S3 adapter",
                 "doctrine/dbal": "to use the Doctrine DBAL adapter",
                 "dropbox-php/dropbox-php": "to use the Dropbox adapter",
                 "ext-apc": "to use the APC adapter",
                 "ext-curl": "*",
+                "ext-fileinfo": "This extension is used to automatically detect the content-type of a file in the AwsS3, OpenCloud, and AzureBlogStorage adapters",
                 "ext-mbstring": "*",
                 "ext-mongo": "*",
                 "ext-zip": "to use the Zip adapter",
-                "knplabs/knp-gaufrette-bundle": "*"
+                "herzult/php-ssh": "to use SFtp adapter",
+                "knplabs/knp-gaufrette-bundle": "to use with Symfony2",
+                "microsoft/windowsazure": "to use Microsoft Azure Blob Storage adapter",
+                "phpseclib/phpseclib": "to user PhpseclibSftp adapter",
+                "rackspace/php-opencloud": "to use Opencloud adapter"
             },
             "type": "library",
             "extra": {
@@ -2069,28 +2081,29 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2013-01-25 08:51:55"
+            "time": "2014-02-24 18:17:33"
         },
         {
             "name": "knplabs/knp-gaufrette-bundle",
-            "version": "v0.1.4",
+            "version": "v0.1.7",
             "target-dir": "Knp/Bundle/GaufretteBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpGaufretteBundle.git",
-                "reference": "c6da43595c5c697f16d2a7ae10433c353d523f08"
+                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/c6da43595c5c697f16d2a7ae10433c353d523f08",
-                "reference": "c6da43595c5c697f16d2a7ae10433c353d523f08",
+                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/f33008584345452c3122bb4eaac0ded1d6084c51",
+                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51",
                 "shasum": ""
             },
             "require": {
-                "knplabs/gaufrette": "0.1.4",
+                "knplabs/gaufrette": "~0.1.7",
                 "symfony/framework-bundle": "2.*"
             },
             "require-dev": {
+                "phpunit/phpunit": "3.7.*",
                 "symfony/console": "2.*",
                 "symfony/yaml": "2.*"
             },
@@ -2128,7 +2141,7 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2013-01-30 11:41:55"
+            "time": "2014-03-24 22:15:03"
         },
         {
             "name": "knplabs/knp-menu",
@@ -3180,16 +3193,16 @@
         },
         {
             "name": "phpcollection/phpcollection",
-            "version": "0.2.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-collection.git",
-                "reference": "acb02a921bb364f360ce786b13455345063c4a07"
+                "reference": "b8bf55a0a929ca43b01232b36719f176f86c7e83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/acb02a921bb364f360ce786b13455345063c4a07",
-                "reference": "acb02a921bb364f360ce786b13455345063c4a07",
+                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/b8bf55a0a929ca43b01232b36719f176f86c7e83",
+                "reference": "b8bf55a0a929ca43b01232b36719f176f86c7e83",
                 "shasum": ""
             },
             "require": {
@@ -3198,7 +3211,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2-dev"
+                    "dev-master": "0.3-dev"
                 }
             },
             "autoload": {
@@ -3226,7 +3239,7 @@
                 "sequence",
                 "set"
             ],
-            "time": "2013-01-23 15:16:14"
+            "time": "2014-03-11 13:46:42"
         },
         {
             "name": "phpcr/phpcr",
@@ -3776,16 +3789,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.0.3",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230"
+                "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
-                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
+                "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
                 "shasum": ""
             },
             "require": {
@@ -3809,7 +3822,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Chris Corbyn"
@@ -3821,7 +3836,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2013-12-03 13:33:24"
+            "time": "2014-03-18 09:03:27"
         },
         {
             "name": "symfony-cmf/block-bundle",
@@ -3890,17 +3905,17 @@
         },
         {
             "name": "symfony-cmf/content-bundle",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "target-dir": "Symfony/Cmf/Bundle/ContentBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "b2ed5d1623ec609691a3f93cb2a7d5c5850bc0d2"
+                "reference": "d11f01a944a6ebc40c6560809d3364fc6850def5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/b2ed5d1623ec609691a3f93cb2a7d5c5850bc0d2",
-                "reference": "b2ed5d1623ec609691a3f93cb2a7d5c5850bc0d2",
+                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/d11f01a944a6ebc40c6560809d3364fc6850def5",
+                "reference": "d11f01a944a6ebc40c6560809d3364fc6850def5",
                 "shasum": ""
             },
             "require": {
@@ -3951,7 +3966,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2013-10-14 15:32:15"
+            "time": "2014-04-07 17:08:16"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -4016,17 +4031,17 @@
         },
         {
             "name": "symfony-cmf/menu-bundle",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "target-dir": "Symfony/Cmf/Bundle/MenuBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "1f84e1a6a9e3686d85b586953f8a8eb6cad9c143"
+                "reference": "befdef8a5463e8db78c8660f10c004472594200e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/1f84e1a6a9e3686d85b586953f8a8eb6cad9c143",
-                "reference": "1f84e1a6a9e3686d85b586953f8a8eb6cad9c143",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/befdef8a5463e8db78c8660f10c004472594200e",
+                "reference": "befdef8a5463e8db78c8660f10c004472594200e",
                 "shasum": ""
             },
             "require": {
@@ -4073,7 +4088,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2013-10-14 15:31:59"
+            "time": "2013-11-19 06:16:25"
         },
         {
             "name": "symfony-cmf/routing",
@@ -4370,22 +4385,22 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.5",
+            "version": "v2.3.7",
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321"
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321",
-                "reference": "fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "swiftmailer/swiftmailer": ">=4.2.0,<5.1-dev",
+                "swiftmailer/swiftmailer": ">=4.2.0,~5.0",
                 "symfony/swiftmailer-bridge": "~2.1"
             },
             "require-dev": {
@@ -4397,7 +4412,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -4423,20 +4438,20 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2013-11-21 12:29:01"
+            "time": "2014-04-05 17:15:52"
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "b70633f92ff71ef490af4c17e7ca3f3bf3d0f304"
+                "reference": "3199b2e0d194f71fe2e13c95768b2ef22206682b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/b70633f92ff71ef490af4c17e7ca3f3bf3d0f304",
-                "reference": "b70633f92ff71ef490af4c17e7ca3f3bf3d0f304",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/3199b2e0d194f71fe2e13c95768b2ef22206682b",
+                "reference": "3199b2e0d194f71fe2e13c95768b2ef22206682b",
                 "shasum": ""
             },
             "require": {
@@ -4538,7 +4553,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-02-12 19:27:03"
+            "time": "2014-04-04 10:27:02"
         },
         {
             "name": "twig/extensions",
@@ -5681,16 +5696,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "1.2.16",
+            "version": "1.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "69e55e68481cf708a6db43aff0b504e31402fe27"
+                "reference": "6ef2bf3a1c47eca07ea95f0d8a902a6340390b34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/69e55e68481cf708a6db43aff0b504e31402fe27",
-                "reference": "69e55e68481cf708a6db43aff0b504e31402fe27",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6ef2bf3a1c47eca07ea95f0d8a902a6340390b34",
+                "reference": "6ef2bf3a1c47eca07ea95f0d8a902a6340390b34",
                 "shasum": ""
             },
             "require": {
@@ -5738,7 +5753,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-02-25 03:34:05"
+            "time": "2014-03-28 10:53:45"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -5925,16 +5940,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.32",
+            "version": "3.7.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2752cbb9ea5bd84c2811b34b6953f76965ec7a2f"
+                "reference": "248d6ce95e6ca7f0e3135252c0b984bbe1f52f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2752cbb9ea5bd84c2811b34b6953f76965ec7a2f",
-                "reference": "2752cbb9ea5bd84c2811b34b6953f76965ec7a2f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/248d6ce95e6ca7f0e3135252c0b984bbe1f52f19",
+                "reference": "248d6ce95e6ca7f0e3135252c0b984bbe1f52f19",
                 "shasum": ""
             },
             "require": {
@@ -5943,11 +5958,11 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpunit/php-code-coverage": "~1.2.1",
-                "phpunit/php-file-iterator": ">=1.3.1",
-                "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-timer": ">=1.0.4",
-                "phpunit/phpunit-mock-objects": "~1.2.0",
+                "phpunit/php-code-coverage": "~1.2",
+                "phpunit/php-file-iterator": "~1.3",
+                "phpunit/php-text-template": "~1.1",
+                "phpunit/php-timer": "~1.0",
+                "phpunit/phpunit-mock-objects": "~1.2",
                 "symfony/yaml": "~2.0"
             },
             "require-dev": {
@@ -5957,7 +5972,7 @@
                 "ext-json": "*",
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
-                "phpunit/php-invoker": ">=1.1.0,<1.2.0"
+                "phpunit/php-invoker": "~1.1"
             },
             "bin": [
                 "composer/bin/phpunit"
@@ -5995,7 +6010,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-02-25 03:47:29"
+            "time": "2014-03-28 11:04:36"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

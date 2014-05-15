@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CoreBundle\Form\Type;
 
 use FOS\UserBundle\Form\Type\ProfileFormType;
@@ -37,12 +28,15 @@ class UserType extends ProfileFormType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName', 'text', array(
-                'label' => 'sylius.form.user.first_name'
+            ->add('nickName', 'text', array(
+                'label' => 'sylius.form.user.nick_name'
             ))
-            ->add('lastName', 'text', array(
-                'label' => 'sylius.form.user.last_name'
-            ))
+            // ->add('firstName', 'text', array(
+            //     'label' => 'sylius.form.user.first_name'
+            // ))
+            // ->add('lastName', 'text', array(
+            //     'label' => 'sylius.form.user.last_name'
+            // ))
         ;
 
         $this->buildUserForm($builder, $options);

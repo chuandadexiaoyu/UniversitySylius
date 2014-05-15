@@ -1,5 +1,4 @@
-# This file is part of the Sylius package.
-# (c) Paweł Jędrzejewski
+
 
 sylius_cart_summary:
     pattern: /
@@ -20,3 +19,5 @@ sylius_cart_item_add:
 sylius_cart_item_remove:
     pattern: /{id}/remove
     defaults: { _controller: sylius.controller.cart_item:removeAction }
+
+

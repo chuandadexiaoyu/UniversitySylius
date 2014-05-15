@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CartBundle\Controller;
 
 use Sylius\Bundle\CartBundle\Event\CartEvent;
@@ -38,7 +29,7 @@ class CartController extends Controller
     {
         $cart = $this->getCurrentCart();
         $form = $this->createForm('sylius_cart', $cart);
-
+        
         return $this->render($this->config->getTemplate('summary.html'), array(
             'cart' => $cart,
             'form' => $form->createView()

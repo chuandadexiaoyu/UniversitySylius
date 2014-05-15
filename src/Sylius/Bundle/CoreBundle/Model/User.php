@@ -1,13 +1,5 @@
 <?php
 
-/*
-* This file is part of the Sylius package.
-*
-* (c) Paweł Jędrzejewski
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
 
 namespace Sylius\Bundle\CoreBundle\Model;
 
@@ -25,6 +17,7 @@ class User extends BaseUser implements UserInterface
     protected $amazonId;
     protected $facebookId;
     protected $googleId;
+    protected $nickName;
     protected $firstName;
     protected $lastName;
     protected $createdAt;
@@ -242,6 +235,16 @@ class User extends BaseUser implements UserInterface
     public function getLastName()
     {
         return $this->lastName;
+    }
+
+    public function setNickName($nickName)
+    {
+        $this->nickName = $nickName;
+    }
+
+    public function getNickName()
+    {
+        return $this->nickName;
     }
 
     /**

@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Sylius\Bundle\CoreBundle\Controller;
 
@@ -68,8 +60,33 @@ class OrderController extends ResourceController
         return $this->redirectHandler->redirectToReferer();
     }
 
+    /**
+     * @end the order, and the order can't be modified
+     * 
+     * @chuandadexiaoyu 2014/05/07
+     */
+    public function endAction(Request $request,$id)
+    {
+        $order = $this->get('sylius.repository.order')->findOneById($id);
+
+        $event = new GenericEvent($order);
+
+        $this->get('event_dispatcher')->dispatch(SyliusOrderEvents::PRE_END, $event);
+
+        if($event->isPropagationStopped())
+        {
+            return $this->render('SyliusWebBundle:Backend/Order:show.html.twig', array('order' => $order));
+        }
+        
+        $this->get('event_dispatcher')->dispatch(SyliusOrderEvents::POST_END, $event);
+
+        return $this->render('SyliusWebBundle:Backend/Order:show.html.twig', array('order' => $order));
+
+    }
+
     private function getFormFactory()
     {
         return $this->get('form.factory');
     }
+
 }

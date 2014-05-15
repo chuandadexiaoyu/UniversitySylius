@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\WebBundle\EventListener\Account;
 
 use Sylius\Bundle\ResourceBundle\Event\ResourceEvent;
@@ -51,9 +42,9 @@ class AddressListener
         $address = $event->getSubject();
         $user = $this->securityContext->getToken()->getUser();
 
-        if ($address === $user->getBillingAddress()) {
-            $user->setBillingAddress(null);
-        }
+        // if ($address === $user->getBillingAddress()) {
+        //     $user->setBillingAddress(null);
+        // }
         if ($address === $user->getShippingAddress()) {
             $user->setShippingAddress(null);
         }

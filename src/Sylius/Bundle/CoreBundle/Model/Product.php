@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CoreBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -97,7 +88,12 @@ class Product extends BaseProduct implements ProductInterface
      */
     public function getSku()
     {
-        return $this->getMasterVariant()->getSku();
+        if($master = $this->getMasterVariant())
+        {
+            return $master->getSku();
+        }
+        
+        return null;
     }
 
     /**
@@ -271,7 +267,12 @@ class Product extends BaseProduct implements ProductInterface
      */
     public function getImage()
     {
-        return $this->getMasterVariant()->getImages()->first();
+        if($master = $this->getMasterVariant())
+        {
+            return $master->getImages()->first();
+        }
+
+        return null;
     }
 
     /**
@@ -283,5 +284,22 @@ class Product extends BaseProduct implements ProductInterface
             self::VARIANT_SELECTION_CHOICE => 'Variant choice',
             self::VARIANT_SELECTION_MATCH  => 'Options matching',
         );
+    }
+
+    public function getStock()
+    {
+        return $this->getMasterVariant()->getOnHand();
+    }
+
+    public function isStockNotZero()
+    {
+        if($this->getStock() == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

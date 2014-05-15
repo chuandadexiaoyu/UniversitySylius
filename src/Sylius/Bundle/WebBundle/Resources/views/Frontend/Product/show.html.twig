@@ -54,19 +54,14 @@
 <div class="row">
     <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix form-horizontal">
 
-
     {% if product.hasVariants %}
         <div class="col-md-6">
-
             {% if product.isVariantSelectionMethodChoice %}
             <table class="table table-condensed">
                 <thead>
                     <tr>
                         <th></th>
                         <th>{{ 'sylius.variant.price'|trans }}</th>
-                        
-                        <th></th>
-                        <th>{{ 'sylius.variant.stock'|trans }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,22 +88,25 @@
                             <span class="label label-warning">{{ 'sylius.out_of_stock'|trans }}</span>
                         {% endif %}
                         </td>
-                        <td>
-                        
-                            {{ variant.onHand }}
-                    
-                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+
             {% else %}
                 <div class="well clearfix">
                     {{ form_widget(form.variant) }}
                 </div>
             {% endif %}
 
+        <div>
+            <span class="label label-info" style="padding:20px 62px">{{'sylius.product.stock'|trans}}{{ product.stock }}{{ 'sylius.product.unit'|trans }}</span>
+            <span class="label label-info" style="padding:20px 62px">{{'sylius.product.stock'|trans}}{{ product.stock }}{{ 'sylius.product.unit'|trans }}</span>
         </div>
+
+        </div>
+
+        
     {% endif %}
 
 
@@ -118,8 +116,11 @@
         {% else %}
             {{ form_row(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
             {{ form_widget(form._token) }}
-            <br>
-            <br>
+            
+            <div class="sylius_product_submit_info" style="height:50px">
+
+            </div>
+
             {% if sylius_is_restricted(product) %}
             <button disabled="disabled" class="btn btn-success btn-lg btn-block"><i class="icon-shopping-cart icon-white icon-large"></i> {{ 'sylius.product_not_available_in_zone'|trans }}</button>
             {% else %}

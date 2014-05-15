@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CoreBundle\Checkout\Step;
 
 use Sylius\Bundle\CoreBundle\Checkout\SyliusCheckoutEvents;
@@ -30,6 +21,14 @@ class AddressingStep extends CheckoutStep
     public function displayAction(ProcessContextInterface $context)
     {
         $order = $this->getCurrentCart();
+        
+        $user = $order->getUser();
+        
+        if($address = $user->getShippingAddress())
+        {
+            $order->setShippingAddress($address);
+        }
+
         $this->dispatchCheckoutEvent(SyliusCheckoutEvents::ADDRESSING_INITIALIZE, $order);
 
         $form = $this->createCheckoutAddressingForm($order);

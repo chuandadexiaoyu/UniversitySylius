@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CoreBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -416,5 +407,12 @@ class Variant extends BaseVariant implements VariantInterface
     public function getShippingDepth()
     {
         return $this->getDepth();
+    }
+
+    public function onHandIncrease($data)
+    {
+        $this->onHand += $data;
+
+        return $this;
     }
 }

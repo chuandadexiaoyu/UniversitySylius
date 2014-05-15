@@ -1,6 +1,3 @@
-# This file is part of the Sylius package.
-# (c) Paweł Jędrzejewski
-
 sylius_frontend:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/main.yml
 

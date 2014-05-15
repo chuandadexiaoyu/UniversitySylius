@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\ResourceBundle\Controller;
 
 use Doctrine\Common\Persistence\ObjectManager;
@@ -95,6 +86,9 @@ class DomainManager
     {
         /** @var ResourceEvent $event */
         $event = $this->dispatchEvent('pre_update', new ResourceEvent($resource));
+
+// print_r(get_class($event));
+// exit("<br>i am here");
 
         if ($event->isStopped()) {
             $this->flashHelper->setFlash(

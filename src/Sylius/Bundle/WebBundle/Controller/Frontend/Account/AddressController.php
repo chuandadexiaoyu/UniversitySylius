@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\WebBundle\Controller\Frontend\Account;
 
 use Doctrine\Common\Persistence\ObjectManager;
@@ -32,7 +23,7 @@ class AddressController extends ResourceController
     {
         $config     = $this->getConfiguration();
         $pluralName = $config->getPluralResourceName();
-
+;
         $view = $this
             ->view()
             ->setTemplate($config->getTemplate('index.html'))

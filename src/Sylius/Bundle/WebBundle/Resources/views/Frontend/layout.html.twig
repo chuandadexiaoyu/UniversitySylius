@@ -15,7 +15,8 @@
 
         {# stylesheets... #}
         {% block stylesheets %}
-            <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" /> -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" type="text/css" />
             {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
                 '@SyliusWebBundle/Resources/assets/css/bootstrap.css'
                 '@SyliusWebBundle/Resources/assets/css/frontend.css'
@@ -57,7 +58,7 @@
         {% endblock %}
 
         {% block main %}
-        <hr>
+        <hr class="head-hr">
         <div class="row">
             <div class="col-md-3" id="sidebar">
                 {% block sidebar %}
@@ -113,6 +114,7 @@
         {# javascripts... #}
         {% block javascripts %}
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
         {% javascripts output='assets/compiled/frontend.js'
             '@SyliusWebBundle/Resources/assets/js/bootstrap.min.js'
             '@SyliusWebBundle/Resources/assets/js/jquery.blueimp-gallery.min.js'

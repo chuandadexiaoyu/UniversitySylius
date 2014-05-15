@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\CoreBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -56,6 +47,14 @@ class Order extends Cart implements OrderInterface
     protected $shipments;
 
     /**
+     * Simple record the ship state of order
+     *
+     * @var StringString
+     */
+    protected $myShipState = OrderInterface::NO_PACKED;
+
+
+    /**
      * Payment.
      *
      * @var PaymentInterface
@@ -90,6 +89,14 @@ class Order extends Cart implements OrderInterface
      * @var string
      */
     protected $shippingState = OrderShippingStates::CHECKOUT;
+
+    /**
+     * the time when the customer get his or her products 
+     *
+     * 
+     * @var datetime
+     **/
+    protected $endAt = null;
 
     /**
      * Promotions applied
@@ -175,6 +182,11 @@ class Order extends Cart implements OrderInterface
         }
 
         return $taxTotal;
+    }
+
+    public function getMyShipState()
+    {
+        return $this->myShipState;
     }
 
     /**
@@ -540,5 +552,33 @@ class Order extends Cart implements OrderInterface
     public function getPromotions()
     {
         return $this->promotions;
+    }
+
+    public function getEndAt()
+    {
+        return $this->endAt;
+    }
+
+    public function setEndAt(\DateTime $endAt = null)
+    {
+        $this->endAt = $endAt;
+    }
+
+    public function end()
+    {
+        $this->endAt = new \DateTime();
+        return $this;
+    }
+
+    public function isEnd()
+    {
+        return null !== $this->endAt;
+    }
+
+    public function setMyShipState($myShipState)
+    {
+        $this->myShipState = $myShipState;
+
+        return $this;
     }
 }

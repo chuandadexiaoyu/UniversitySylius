@@ -63,6 +63,12 @@ class ResourceController extends FOSRestController
                 $container->get('translator'),
                 $container->get('session')
             );
+
+            // print_r($this->config->getServiceName('manager'));
+            // print_r("<br>");
+            // print_r(get_class($container->get($this->config->getServiceName('manager'))));
+            // exit("<br>i am here");
+
             $this->domainManager = new DomainManager(
                 $container->get($this->config->getServiceName('manager')),
                 $container->get('event_dispatcher'),
@@ -117,9 +123,6 @@ class ResourceController extends FOSRestController
                 array($criteria, $sorting, $this->config->getLimit())
             );
         }
-
-
-
 
         $view = $this
             ->view()
@@ -183,6 +186,14 @@ class ResourceController extends FOSRestController
 
         if (($request->isMethod('PUT') || $request->isMethod('POST')) && $form->submit($request)->isValid()) {
 
+
+// print_r($resource->getEmail());
+// print_r("<br>");
+// print_r($resource->getPassWord());
+// print_r("<br>");
+// print_r($resource->getNickName());
+// exit('<br>i am here');
+
             $this->domainManager->update($resource);
 
             return $this->redirectHandler->redirectTo($resource);
@@ -191,6 +202,19 @@ class ResourceController extends FOSRestController
         if ($this->config->isApiRequest()) {
             return $this->handleView($this->view($form));
         }
+
+// print_r(get_class($resource));
+// print_r("<br>");
+// print_r($resource->getEmail());
+// print_r("<br>");
+// print_r($resource->getPassWord());
+// print_r("<br>");
+// print_r($resource->getPlainPassword());
+// print_r("<br>");
+// print_r($resource->getSalt());
+// print_r("<br>");
+// print_r($resource->getNickName());
+// exit('<br>i am here');
 
         $view = $this
             ->view()
@@ -258,6 +282,7 @@ class ResourceController extends FOSRestController
             $default = array('slug' => $request->get('slug'));
         } else {
             $default = array('id' => $request->get('id'));
+            
         }
 
         $criteria = array_merge($default, $criteria);

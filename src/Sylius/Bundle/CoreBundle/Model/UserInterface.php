@@ -35,9 +35,9 @@ interface UserInterface extends BaseUserInterface, TimestampableInterface
      */
     public function setFirstName($firstName);
 
-    /**
-     * Get last name
-     */
+    // *
+    //  * Get last name
+     
     public function getLastName();
 
     /**
@@ -46,6 +46,10 @@ interface UserInterface extends BaseUserInterface, TimestampableInterface
      * @param string $lastName
      */
     public function setLastName($lastName);
+    
+    public function setNickName($nickName);
+
+    public function getNickName();
 
     /**
      * Get currency

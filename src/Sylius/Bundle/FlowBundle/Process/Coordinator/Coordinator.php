@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\FlowBundle\Process\Coordinator;
 
 use Sylius\Bundle\FlowBundle\Process\Builder\ProcessBuilderInterface;
@@ -100,7 +91,8 @@ class Coordinator implements CoordinatorInterface
     {
         $process = $this->buildProcess($scenarioAlias);
         $step = $process->getStepByName($stepName);
-
+// print_r(get_class($step));
+// exit('i am here');
         $this->context->initialize($process, $step);
 
         try {
@@ -162,6 +154,8 @@ class Coordinator implements CoordinatorInterface
         }
 
         if ($result instanceof ActionResult) {
+            // print_r($result->getNextStepName());
+            // exit('i am here');
             // Handle explicit jump to step.
             if ($result->getNextStepName()) {
                 $this->context->setNextStepByName($result->getNextStepName());
@@ -177,7 +171,8 @@ class Coordinator implements CoordinatorInterface
 
                 return new RedirectResponse($url);
             }
-
+// print_r(get_class($this->context->getNextStep()));
+// exit('<br>i am here,baby');
             // Handle default linear behaviour.
             return $this->redirectToStepDisplayAction($process, $this->context->getNextStep());
         }
@@ -226,7 +221,8 @@ class Coordinator implements CoordinatorInterface
             $url = $this->router->generate($route, array(
                 'stepName' => $step->getName()
             ));
-
+// print_r($url);
+// exit('i am here');
             return new RedirectResponse($url);
         }
 
@@ -255,7 +251,8 @@ class Coordinator implements CoordinatorInterface
     protected function buildProcess($scenarioAlias)
     {
         $processScenario = $this->loadScenario($scenarioAlias);
-
+// print_r(get_class($processScenario));
+// exit("i am here");
         $process = $this->builder->build($processScenario);
         $process->setScenarioAlias($scenarioAlias);
 

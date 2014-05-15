@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sylius\Bundle\OrderBundle;
 
 class SyliusOrderEvents
@@ -21,4 +12,7 @@ class SyliusOrderEvents
 
     const PRE_DELETE  = 'sylius.order.pre_delete';
     const POST_DELETE = 'sylius.order.post_delete';
+
+    const PRE_END = 'sylius.order.pre_end'; 
+    const POST_END = 'sylius.order.post_end';
 }

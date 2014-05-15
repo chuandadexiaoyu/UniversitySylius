@@ -79,12 +79,7 @@
             {% include 'SyliusWebBundle:Backend/Address:_show.html.twig' with {'address': user.shippingAddress } %}
         </div>
     {% endif %}
-    {% if user.billingAddress %}
-        <div class="col-md-6">
-            <h4>{{ 'sylius.user.billing_address'|trans }}</h4>
-            {% include 'SyliusWebBundle:Backend/Address:_show.html.twig' with {'address': user.billingAddress } %}
-        </div>
-    {% endif %}
+    
 </div>
 <div class="row">
     <div class="col-md-12">

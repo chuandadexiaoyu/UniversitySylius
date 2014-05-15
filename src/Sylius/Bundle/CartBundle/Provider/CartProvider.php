@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Sylius\Bundle\CartBundle\Provider;
 
@@ -99,8 +91,8 @@ class CartProvider implements CartProviderInterface
         }
 
         $this->cart = $this->repository->createNew();
-        $this->eventDispatcher->dispatch(SyliusCartEvents::CART_INITIALIZE, new CartEvent($this->cart));
-
+        $this->eventDispatcher->dispatch(SyliusCartEvents::CART_INITIALIZE, new CartEvent($this->cart));//set user and currency
+          
         return $this->cart;
     }
 
@@ -145,6 +137,7 @@ class CartProvider implements CartProviderInterface
     {
         if (null === $this->cart) {
             $cartIdentifier = $this->storage->getCurrentCartIdentifier();
+
             if ($cartIdentifier) {
                 $this->cart = $this->getCartByIdentifier($cartIdentifier);
             }

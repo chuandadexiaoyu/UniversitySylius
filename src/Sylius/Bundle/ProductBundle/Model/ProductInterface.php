@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c); Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Sylius\Bundle\ProductBundle\Model;
 
@@ -43,6 +35,9 @@ interface ProductInterface extends SoftDeletableInterface, TimestampableInterfac
      */
     public function getSlug();
 
+    // public function getOnHold();
+
+    // public function setOnHold($onHold);
     /**
      * Set the permalink.
      *

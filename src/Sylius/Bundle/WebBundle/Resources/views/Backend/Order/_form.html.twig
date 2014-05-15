@@ -1,2 +1,8 @@
+{% form_theme form 'SyliusWebBundle::forms.html.twig' %}
 <center>Not implemented yet.</center>
 <hr>
+<fieldset>
+    {{ form_row(form.myShipState) }}
+</fieldset>
+
+{{ form_widget(form._token) }}
